@@ -13,3 +13,7 @@ After creating the dataset we used many transformation algorithms to embed the t
 **Recommended to use GPU to run much faster.
 But it works well with the CPU also.**
 - GPU takes around 40 min, while CPU may take hours.
+
+# Project Methodology
+
+![Gutenberg](https://drive.google.com/uc?export=view&id=1-YX8_vqTOSjudFe5AiovLCDzA6SEOhLm)
