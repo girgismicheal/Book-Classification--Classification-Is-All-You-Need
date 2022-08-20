@@ -59,6 +59,7 @@ But it works well with the CPU also.**
 
 **Dataset Building**
 ![image](/Image/Screenshot_1.png)
+
 - Create a data frame containing 2 columns and 1000 rows representing the books' samples (Sample) and the book name (Label)
 
 **Note:** Before starting to transform words. We split the data into training and testing, to prevent data leakage.
