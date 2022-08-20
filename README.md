@@ -68,3 +68,21 @@ It is one of the trivial steps to be followed for a better understanding of the 
 
 We used some methods to assign weights to particular words, sentences, or documents within our data before modeling them. We go for numerical representation for individual words as it’s easy for the computer to process numbers.
 
+  ## <a name="4">BOW</a>
+A bag of words is a representation of text that describes the occurrence of words within a document, that just keeps track of word counts and disregards the grammatical details and the word order. As we said that we split the data. So, we applied BOW to training and testing data. So, it transforms each sentence into an array of occurrences in this sentence.
+```Python
+from sklearn.feature_extraction.text import CountVectorizer
+
+BOW = CountVectorizer()
+BOW_train = BOW.fit_transform(X_train)
+BOW_test = BOW.transform(X_test)
+```
+**Important Note:** We Applied the Linear discriminant analysis (LDA) on Bow to reduce its dimensions. as it's vector shape very large.
+```Python
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+
+lda = LDA()
+lda_train = lda.fit_transform(BOW_train.toarray(), y_train)
+lda_test = lda.transform(BOW_test.toarray())
+lda_test.shape
+```
