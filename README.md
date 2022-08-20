@@ -132,3 +132,31 @@ def get_doc2vec_vector(df):
 train_doc2vec_vectors=get_doc2vec_vector(df_train)
 test_doc2vec_vectors=get_doc2vec_vector(df_test)
 ```
+
+  ## <a name="7">Bert Embedding</a>
+Bert can be used as a word embedding pretrained model and then use these embedded vectors to train another model like SVM or Naive bayes and DL models like RNN or LSTM 
+
+- BERT (Bidirectional Encoder Representations from Transformers) is a highly complex and advanced language model that helps people automate language understanding.
+- BERT is the encoder of transformers, and it consists of 12 layers in the base model, and 24 layers for the large model. So, we can take the output of these layers as an embedding vector from the pre-trained model.
+- There are three approaches to the embedding vectors: concatenate the last four layers, the sum of the last four layers, or embed the full sentence by taking the mean of the embedding vectors of the tokenized words
+- As the first two methods require computational power, we used the third one which takes the mean of columns of each word and each word is represented as a 768x1 vector. so, the whole sentence at the end is represented as a 768x1 vector
+  ## Helper Function
+  This help function build to pass the data through the models Glove, Fast-text, and Word2vec model and return the embedding vectors.
+```Python
+def get_vectors_pretrained(df, model):
+    embedding_vectors = []
+    for partition in df['Sample of the book']:
+        sentence = []
+        for word in partition.split(' '):
+            try:
+                sentence.append(model[word])
+            except:
+                pass
+        sentence = np.array(sentence)
+        sentence = sentence.mean(axis=0)
+        embedding_vectors.append(sentence)
+    embedding_vectors = np.array(embedding_vectors)
+    return embedding_vectors
+```
+
+
