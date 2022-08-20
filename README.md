@@ -284,3 +284,6 @@ clf.fit(X_trained1g_cv.toarray(),y_train)
 ```
 - We found that the best hyperparameter is a linear kernel with a regularization coefficient equal to 1.
 
+
+# <a name="20">Conclusion</a>
+To wrap up, we made 32 model on different transformation methods and it was obvious that SVM perform better than other models, this is because the data is slightly few, and SVM performs better when data is small. When comparing transformation methods, it clear that TF-IDF uni-gram is trained better in most of the models, because as the length of n-grams increase, the frequency of finding this n-grams again decreases.
