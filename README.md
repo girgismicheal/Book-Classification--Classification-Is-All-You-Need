@@ -270,3 +270,17 @@ We noticed that the accuracy decreased by decreasing number of words in each par
 | sir     | 1       | 176   | 290       | 0                     |
 
 - At first, we explored the weights of word examples in correct and wrong book classification to make sure that everything is working fine.
+
+
+# <a name="19">Grid Search On the champion model</a>
+```Python 
+from sklearn.model_selection import GridSearchCV
+param={
+    'kernel' :['rbf','linear'],
+    'C':[10, 1, .1, .01, .001],
+}
+clf=GridSearchCV (model_cv,param_grid=param)
+clf.fit(X_trained1g_cv.toarray(),y_train)
+```
+- We found that the best hyperparameter is a linear kernel with a regularization coefficient equal to 1.
+
