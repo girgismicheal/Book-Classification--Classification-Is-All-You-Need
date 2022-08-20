@@ -241,3 +241,32 @@ The Bert results are 100% training accuracy, and 88% testing, So, the SVM is sti
 We applied 10-folds cross validation to estimate the skills of our machine learning models on different combinations of validation and training datasets.
 ## Cross validation on the champion model
 
+# <a name="16">Error analysis</a>
+ ## <a name="17">Reduce the samples' word number</a>
+We reduced the number of words in each sentence to test if the accuracy of the champion model will decrease, increase or will still the same.
+
+| Number_of_samples | Testing_Accuracy |
+|-------------------|------------------|
+| 70                | 0.95             |
+| 50                | 0.9              |
+| 40                | 0.885            |
+| 30                | 0.86             |
+| 20                | 0.765            |
+
+We noticed that the accuracy decreased by decreasing number of words in each partition and this make sense because the model can’t classify which class when number of words(features) is small.
+ ## <a name="18">Word Counts</a>
+| word    | Example | Wrong | Correct   | Wrong is greater than |
+|---------|---------|-------|-----------| --------------------- |
+| catch   | 1       | 21    | 19        | 1                     |
+| pea     | 1       | 2     | 4         | 0                     |
+| roll    | 1       | 110   | 19        | 1                     |
+| part    | 1       | 200   | 81        | 1                     |
+| shop    | 3       | 5     | 41        | 0                     |
+| ...     | ...     | ...   | ...       | ...                   |
+| stop    | 1       | 50    | 105       | 0                     |
+| stay    | 2       | 18    | 56        | 0                     |
+| stand   | 1       | 218   | 81        | 1                     |
+| still   | 1       | 312   | 90        | 1                     |
+| sir     | 1       | 176   | 290       | 0                     |
+
+- At first, we explored the weights of word examples in correct and wrong book classification to make sure that everything is working fine.
