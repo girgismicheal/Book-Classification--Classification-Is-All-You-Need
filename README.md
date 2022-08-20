@@ -230,3 +230,9 @@ text_embedding={
 - From the results above, the best accuracy comes from the SVC classifier trained on the TF-IDF uni-gram embedding vector and the achieving training accuracy is 100% and testing accuracy is 99.5%.
 
 
+
+# <a name="14">BERT classifier</a>
+- BERT can be used as the main classifier by fine-tuning the model on our dataset.
+- Used implemented BERT class from hugging face library which called transformers.
+
+The Bert results are 100% training accuracy, and 88% testing, So, the SVM is still the champion model.
