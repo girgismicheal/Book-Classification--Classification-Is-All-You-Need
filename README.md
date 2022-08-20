@@ -106,3 +106,29 @@ X_trained1g_cv,X_test1g_cv = tfidf_ngram(1,X_train=X_train,X_test=X_test)
 X_trained2g_cv,X_test2g_cv = tfidf_ngram(2,X_train=X_train,X_test=X_test)
 ```
 
+  ## <a name="6">Doc2Vec</a>
+- Doc2Vec is a method for representing a document as a vector and is built on the word2vec approach.
+- I have trained a model from scratch to embed each sentence or paragraph of the data frame as a vector of 50 elements.
+```Python
+#Import packages
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+from nltk.tokenize import word_tokenize
+
+def get_doc2vec_vector(df):
+    # Tokenization of each document
+    tokenized_doc = []
+    for d in df['Sample of the book']:
+        tokenized_doc.append(word_tokenize(d.lower()))
+
+    # Convert tokenized document into gensim formated tagged data
+    tagged_data = [TaggedDocument(d, [i]) for i, d in enumerate(tokenized_doc)]
+    model = Doc2Vec(tagged_data, vector_size=50, window=2, min_count=1, workers=4, epochs = 100)
+
+    doc2vec_vectors=[]
+    for sentence in df['Sample of the book']:
+        doc2vec_vectors.append(model.infer_vector(word_tokenize(sentence.lower())))
+    return doc2vec_vectors
+
+train_doc2vec_vectors=get_doc2vec_vector(df_train)
+test_doc2vec_vectors=get_doc2vec_vector(df_test)
+```
