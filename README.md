@@ -182,3 +182,14 @@ test_fast_text_embedding_vectors=get_vectors_pretrained(df_test,glove_model)
 print(train_fast_text_embedding_vectors.shape)
 ```
 
+  ## <a name="10">Word2Vec</a>
+- Word2vec is a method to represent each word as a vector.
+- Used a pre-trained model “word2vec-google-news-300”.
+```Python
+import gensim.downloader as api
+word2vec_model = api.load("word2vec-google-news-300") 
+train_word2vec_embedding_vectors= get_vectors_pretrained(df_train,word2vec_model)
+test_word2vec_embedding_vectors= get_vectors_pretrained(df_test,word2vec_model)
+print(train_word2vec_embedding_vectors.shape)
+```
+
