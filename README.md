@@ -89,7 +89,7 @@ lda_test.shape
 ```
 
 
-  ## <a name="5">TF-IDF</a>
+## <a name="5">TF-IDF</a>
   TF-IDF (term frequency-inverse document frequency) is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. This is done by multiplying two metrics: how many times a word appears in a document, and the inverse document frequency of the word across a set of documents.
   <br><br>In addition, to understand the relation between each consecutive pair of words, tfidf with bigram has applied. Furthermore, we applied tfidf with trigram to find out wether there is a relation between each consecutive three words.
 - In the project, used Uni-gram and Bi-gram  
@@ -107,7 +107,7 @@ X_trained1g_cv,X_test1g_cv = tfidf_ngram(1,X_train=X_train,X_test=X_test)
 X_trained2g_cv,X_test2g_cv = tfidf_ngram(2,X_train=X_train,X_test=X_test)
 ```
 
-  ## <a name="6">Doc2Vec</a>
+## <a name="6">Doc2Vec</a>
 - Doc2Vec is a method for representing a document as a vector and is built on the word2vec approach.
 - I have trained a model from scratch to embed each sentence or paragraph of the data frame as a vector of 50 elements.
 ```Python
@@ -134,14 +134,14 @@ train_doc2vec_vectors=get_doc2vec_vector(df_train)
 test_doc2vec_vectors=get_doc2vec_vector(df_test)
 ```
 
-  ## <a name="7">Bert Embedding</a>
+## <a name="7">Bert Embedding</a>
 Bert can be used as a word embedding pretrained model and then use these embedded vectors to train another model like SVM or Naive bayes and DL models like RNN or LSTM 
 
 - BERT (Bidirectional Encoder Representations from Transformers) is a highly complex and advanced language model that helps people automate language understanding.
 - BERT is the encoder of transformers, and it consists of 12 layers in the base model, and 24 layers for the large model. So, we can take the output of these layers as an embedding vector from the pre-trained model.
 - There are three approaches to the embedding vectors: concatenate the last four layers, the sum of the last four layers, or embed the full sentence by taking the mean of the embedding vectors of the tokenized words
 - As the first two methods require computational power, we used the third one which takes the mean of columns of each word and each word is represented as a 768x1 vector. so, the whole sentence at the end is represented as a 768x1 vector
-  ## Helper Function
+## Helper Function
   This help function build to pass the data through the models Glove, Fast-text, and Word2vec model and return the embedding vectors.
 ```Python
 def get_vectors_pretrained(df, model):
