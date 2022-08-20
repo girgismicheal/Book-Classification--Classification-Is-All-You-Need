@@ -159,4 +159,16 @@ def get_vectors_pretrained(df, model):
     return embedding_vectors
 ```
 
+  ## <a name="8">Glove</a>
+- Global vector for word representation is an unsupervised learning algorithm for word embedding.
+- We trained a GloVe model on books’ data, that represents each word in a 300x1 Vector. We took the data frame after cleaning and get each paragraph and passed it to the corpus. After that,t we trained the model on each word.
+- We used also a pre-trained model “glove-wiki-gigaword-300”. Each word is represented by a 300x1 vector. Then, on each word of a sentence in the data frame, we replaced it with its vector representation.
+```Python
+import gensim.downloader as api
+glove_model = api.load("glove-wiki-gigaword-300")  # load glove vectors
+train_glove_embedding_vectors=get_vectors_pretrained(df_train,glove_model)
+test_glove_embedding_vectors=get_vectors_pretrained(df_test,glove_model)
+print(train_glove_embedding_vectors.shape)
+```
+
 
