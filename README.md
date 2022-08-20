@@ -49,6 +49,7 @@ But it works well with the CPU also.**
 - Many problems have been found in books' content, so we should deal with them.
 
 # <a name="2">Data Preprocessing</a>
+
 **Clean the content of the books by:**
 - Removing the word capitalization, unwanted characters, white spaces, and stop words.
 - Replacing some patterns.
@@ -58,6 +59,7 @@ But it works well with the CPU also.**
 > delight steelkilt strain oar stiff pull harpooneer get fast spear hand radney sprang bow always furious man seem boat bandage cry beach whale topmost back nothing loath bowsman haul blinding foam blent two whiteness together till sudden boat struck sunken ledge keel spill stand mate instant fell whale slippery back boat right dash aside swell radney toss sea flank whale struck spray instant dimly see veil wildly seek remove eye moby dick whale rush round sudden maelstrom seize swimmer jaw rear high plunge headlong go meantime first tap boat bottom lakeman slacken line drop astern whirlpool calmly look thought thought
 
 **Dataset Building**
+
 ![image](/Image/Screenshot_1.png)
 
 - Create a data frame containing 2 columns and 1000 rows representing the books' samples (Sample) and the book name (Label)
@@ -141,6 +143,7 @@ Bert can be used as a word embedding pretrained model and then use these embedde
 - BERT is the encoder of transformers, and it consists of 12 layers in the base model, and 24 layers for the large model. So, we can take the output of these layers as an embedding vector from the pre-trained model.
 - There are three approaches to the embedding vectors: concatenate the last four layers, the sum of the last four layers, or embed the full sentence by taking the mean of the embedding vectors of the tokenized words
 - As the first two methods require computational power, we used the third one which takes the mean of columns of each word and each word is represented as a 768x1 vector. so, the whole sentence at the end is represented as a 768x1 vector
+
 ## Helper Function
   This help function build to pass the data through the models Glove, Fast-text, and Word2vec model and return the embedding vectors.
 ```Python
