@@ -236,3 +236,8 @@ text_embedding={
 - Used implemented BERT class from hugging face library which called transformers.
 
 The Bert results are 100% training accuracy, and 88% testing, So, the SVM is still the champion model.
+
+# <a name="15">Validation</a>
+We applied 10-folds cross validation to estimate the skills of our machine learning models on different combinations of validation and training datasets.
+## Cross validation on the champion model
+
