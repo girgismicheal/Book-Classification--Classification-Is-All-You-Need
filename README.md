@@ -213,3 +213,20 @@ text_embedding={
 }
 ```
 - File name is ""Embedding_Vectors_Classification.pkl"
+
+
+
+# <a name="13">Training</a>
+**Trained Models**
+> - SVM is a supervised machine learning algorithm that separates classes using hyperplanes.
+> - Gaussian NB is special type of Naïve Bayes algorithm that perform well on continuous data. 
+> - KNN is a non-parametric supervised algorithm. Despite its simplicity it can be highly competitive in NLP applications. 
+> - Decision Tree uses a tree-like model in to take a decision and studying its consequences.
+- So, we have 32 models on all of our transformation methods.
+
+**Choosing the Champion model and champion embedding method**
+![image](/Image/Screenshot_4.png)
+
+- From the results above, the best accuracy comes from the SVC classifier trained on the TF-IDF uni-gram embedding vector and the achieving training accuracy is 100% and testing accuracy is 99.5%.
+
+
