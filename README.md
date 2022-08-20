@@ -63,3 +63,8 @@ But it works well with the CPU also.**
 
 **Note:** Before starting to transform words. We split the data into training and testing, to prevent data leakage.
 
+# <a name="3">Word Embedding</a>
+It is one of the trivial steps to be followed for a better understanding of the context of what we are dealing with. After the initial text is cleaned and normalized, we need to transform it into its features to be used for modeling.
+
+We used some methods to assign weights to particular words, sentences, or documents within our data before modeling them. We go for numerical representation for individual words as it’s easy for the computer to process numbers.
+
