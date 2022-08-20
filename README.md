@@ -17,3 +17,28 @@ But it works well with the CPU also.**
 # Project Methodology
 
 ![Gutenberg](https://drive.google.com/uc?export=view&id=1-YX8_vqTOSjudFe5AiovLCDzA6SEOhLm)
+
+# Project Main Steps
+
+
+- [Data Exploration](#1)
+- [Data Preprocessing](#2)
+- [Word Embedding](#3)
+  - [BOW](#4)
+  - [TF-IDF](#5)
+  - [Doc2Vec](#6)
+  - [Bert Embedding](#7)
+  - [Glove](#8)
+  - [Fast text](#9)
+  - [Word2Vec](#10)
+  - [LDA (Linear Discriminant Analysis)](#11)
+- [Word embedding dictionary](#12)
+- [Training](#13)
+- [BERT classifier](#14)
+- [Validation](#15)
+- [Error analysis](#16)
+  - [Reduce the samples' word number](#17)
+  - [Word Counts](#18)
+- [Grid Search](#19)
+- [Conclusion](#20)
+
