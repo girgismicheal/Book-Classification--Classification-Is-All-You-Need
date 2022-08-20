@@ -193,3 +193,23 @@ test_word2vec_embedding_vectors= get_vectors_pretrained(df_test,word2vec_model)
 print(train_word2vec_embedding_vectors.shape)
 ```
 
+
+# <a name="12">Word embedding dictionary</a>
+> Saved the word Embedding as a pickle file 
+for future use, the embedding takes a long time. So, if you want to start directly with the embedded data that has been computed previously.
+
+The file dictionary:
+```Python
+text_embedding={
+    'BOW':(BOW_train,BOW_test),
+    'TF_IDF 1_gram':(X_trained1g_cv,X_test1g_cv),
+    'TF_IDF 2_gram':(X_trained2g_cv,X_test2g_cv),
+    'Doc2vec':(train_doc2vec_vectors,test_doc2vec_vectors),
+    'LDA' :(lda_train,lda_test),
+
+    'Glove':(train_glove_embedding_vectors,test_glove_embedding_vectors),
+    'Word2vec':(train_word2vec_embedding_vectors,test_word2vec_embedding_vectors),
+    'BERT Model':(BERT_embedding_vectors_train,BERT_embedding_vectors_test),
+}
+```
+- File name is ""Embedding_Vectors_Classification.pkl"
